@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:travel_app/misc/colors.dart';
+
 import 'package:travel_app/widgets/app_large_text.dart';
 import 'package:travel_app/widgets/app_text.dart';
 import 'package:travel_app/widgets/responsive_button.dart';
@@ -27,10 +27,11 @@ class _WelcomePageState extends State<WelcomePage> {
                   decoration: BoxDecoration(
                       color: const Color.fromARGB(255, 12, 65, 39),
                       image: DecorationImage(
-                        image: AssetImage('img/' + images[index]),
-                      )),
+                          image: AssetImage('img/' + images[index]),
+                          fit: BoxFit.cover)),
                   child: Container(
-                    margin: EdgeInsets.only(top: 150, left: 20, right: 20),
+                    margin:
+                        const EdgeInsets.only(top: 150, left: 20, right: 20),
                     child: Row(
                       children: [
                         Column(
@@ -44,7 +45,7 @@ class _WelcomePageState extends State<WelcomePage> {
                               text: "Mountain",
                               color: Colors.white,
                             ),
-                            SizedBox(
+                            const SizedBox(
                               height: 20,
                             ),
                             Container(
@@ -56,7 +57,7 @@ class _WelcomePageState extends State<WelcomePage> {
                                 color: Colors.white,
                               ),
                             ),
-                            SizedBox(
+                            const SizedBox(
                               height: 40,
                             ),
                             ResponsiveButton(width: 100)
