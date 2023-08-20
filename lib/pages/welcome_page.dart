@@ -65,12 +65,16 @@ class _WelcomePageState extends State<WelcomePage> {
                         Column(
                           children: List.generate(
                               images.length,
-                              (index) => Container(
+                              (indexDots) => Container(
+                                    margin: EdgeInsets.all(2),
                                     width: 8,
-                                    height: 25,
+                                    height: index == indexDots ? 25 : 8,
                                     decoration: BoxDecoration(
                                         borderRadius: BorderRadius.circular(8),
-                                        color: AppColors.mainColor),
+                                        color: index == indexDots
+                                            ? AppColors.mainColor
+                                            : AppColors.mainColor
+                                                .withOpacity(0.3)),
                                   )),
                         )
                       ],
