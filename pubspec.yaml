@@ -58,10 +58,15 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - img/welcome_one.png
-    - img/welcome_two.png
-    - img/welcome_three.png
-    - img/arrow.png
+    - img/welcome-one.png
+    - img/welcome-two.png
+    - img/welcome-three.png
+    - img/button-one.png
+    - img/balloning.png
+    - img/hiking.png
+    - img/kayaking.png
+    - img/mountain.jpeg
+    - img/snorkling.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

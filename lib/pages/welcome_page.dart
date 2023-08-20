@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:travel_app/misc/colors.dart';
 
 import 'package:travel_app/widgets/app_large_text.dart';
 import 'package:travel_app/widgets/app_text.dart';
@@ -12,7 +13,7 @@ class WelcomePage extends StatefulWidget {
 }
 
 class _WelcomePageState extends State<WelcomePage> {
-  List images = ["welcome_one.png", "welcome_two.png", "welcome_three.png"];
+  List images = ["welcome-one.png", "welcome-two.png", "welcome-three.png"];
   List text = ["Trips", "Mountain"];
 
   @override
@@ -33,17 +34,16 @@ class _WelcomePageState extends State<WelcomePage> {
                     margin:
                         const EdgeInsets.only(top: 150, left: 20, right: 20),
                     child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             AppLargeText(
                               text: "Trips",
-                              color: Colors.white,
                             ),
                             AppText(
                               text: "Mountain",
-                              color: Colors.white,
                             ),
                             const SizedBox(
                               height: 20,
@@ -54,14 +54,24 @@ class _WelcomePageState extends State<WelcomePage> {
                                 text:
                                     "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,",
                                 size: 16,
-                                color: Colors.white,
                               ),
                             ),
                             const SizedBox(
                               height: 40,
                             ),
-                            ResponsiveButton(width: 100)
+                            ResponsiveButton(width: 120)
                           ],
+                        ),
+                        Column(
+                          children: List.generate(
+                              images.length,
+                              (index) => Container(
+                                    width: 8,
+                                    height: 25,
+                                    decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(8),
+                                        color: AppColors.mainColor),
+                                  )),
                         )
                       ],
                     ),
