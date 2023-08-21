@@ -13,7 +13,12 @@ class MainPage extends StatefulWidget {
 }
 
 class _MainPageState extends State<MainPage> {
-  List pages = [HomePage(), BarItemPage(), SearchPage(), MyPage()];
+  List pages = [
+    const HomePage(),
+    const BarItemPage(),
+    const SearchPage(),
+    const MyPage()
+  ];
 
   int currentIndex = 0;
 
@@ -26,16 +31,21 @@ class _MainPageState extends State<MainPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: pages[0],
+      backgroundColor: Colors.white,
+      body: pages[currentIndex],
       bottomNavigationBar: BottomNavigationBar(
-        onTap: onTap,
+          unselectedFontSize: 0,
+          selectedFontSize: 0,
+          type: BottomNavigationBarType.fixed,
+          backgroundColor: Colors.white,
+          onTap: onTap,
           currentIndex: currentIndex,
-          selectedItemColor: Colors.black54,
-          unselectedItemColor: Colors.black12,
+          selectedItemColor: AppColors.mainColor,
+          unselectedItemColor: Colors.grey.withOpacity(0.5),
           showSelectedLabels: false,
           showUnselectedLabels: false,
           elevation: 0,
-          items: [
+          items: const [
             BottomNavigationBarItem(label: "Home", icon: Icon(Icons.apps)),
             BottomNavigationBarItem(
                 label: "Bar", icon: Icon(Icons.bar_chart_sharp)),
