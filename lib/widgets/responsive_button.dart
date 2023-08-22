@@ -16,24 +16,24 @@ class ResponsiveButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Flexible(
       child: Container(
-        width: width,
+        width: isResponsive == true ? double.maxFinite : width,
         height: 60,
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10),
             color: AppColors.mainColor),
-        child: Container(
-            child: isResponsive == true
-                ? Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                        Text(
-                          text!,
-                          style: const TextStyle(
-                              fontSize: 17, color: Colors.white),
-                        ),
-                        Image.asset('img/button-one.png')
-                      ])
-                : Image.asset('img/button-one.png')),
+        child: Row(
+          mainAxisAlignment: isResponsive == true
+              ? MainAxisAlignment.spaceBetween
+              : MainAxisAlignment.center,
+          children: [
+            isResponsive == true
+                ? Container(
+                    margin: const EdgeInsets.only(left: 20),
+                    child: AppText(text: "Book Trip Now", color: Colors.white))
+                : Container(),
+            Image.asset("img/button-one.png"),
+          ],
+        ),
       ),
     );
   }
